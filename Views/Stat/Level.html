@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Level{% endblock %}
+
+{% block otherPages %}
+<div class="container mt-2">
+  <div class="text-center text-white mb-5"><h1>Statystyki</h1></div>
+<div class="card text-center bg-dark">
+  <div class="card-header">
+
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link text-secondary {% if typeView in ['Level'] %} text-light active  bg-secondary border-warning border-bottom-0{% endif %}" href="{{statlevel}}">Level</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-secondary {% if typeView in ['Frags'] %} text-light active  bg-secondary border-warning border-bottom-0 {% endif %}" href="{{statfrags}}">Frags</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-secondary {% if typeView in ['MagLevel'] %} text-light active  bg-secondary border-warning border-bottom-0 {% endif %}" href="{{statmaglevel}}">Magic</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-secondary {% if typeView in ['Shielding'] %} text-light active  bg-secondary border-warning border-bottom-0 {% endif %}" href="{{statshielding}}">Shielding</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-secondary {% if typeView in ['Distance'] %} text-light active  bg-secondary border-warning border-bottom-0 {% endif %}" href="{{statdistance}}">Distance</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-secondary {% if typeView in ['Club'] %} text-light active  bg-secondary border-warning border-bottom-0 {% endif %}" href="{{statclub}}">Club</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-secondary {% if typeView in ['Sword'] %} text-light active  bg-secondary border-warning border-bottom-0 {% endif %}" href="{{statsword}}">Sword</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-secondary {% if typeView in ['Axe'] %} text-light active  bg-secondary border-warning border-bottom-0 {% endif %}" href="{{stataxe}}">Axe</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-secondary {% if typeView in ['Fis'] %} text-light active  bg-secondary border-warning border-bottom-0 {% endif %}" href="{{statfist}}">Fist</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-secondary {% if typeView in ['Fishing'] %} text-light active  bg-secondary border-warning border-bottom-0 {% endif %}" href="{{statfishing}}">Fishing</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <table class="table table-dark bg-dark ">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nazwa gracza</th>
+          <th scope="col">Poziom</th>
+          <th scope="col">Profesja</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for player in players %}
+        <tr>
+          <th scope="row">{{ loop.index }}</th>
+          <td>{{ player.name }}</td>
+          <td>{{ player.level }}</td>
+          <td>{{ player.nameVoc }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+{% endblock %}

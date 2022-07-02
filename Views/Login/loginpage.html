@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{%block style%}
+{%endblock%}
+{% block title %}Zaloguj się{% endblock %}
+{% block otherPages %}
+<div class="bg-dark h-100">
+<section class="text-center">
+  <!-- Background image -->
+  <div class="p-5 bg-image" style="
+        background-image: url('Front/newImages/account.jpg');
+        height: 350px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: 80% 100%; 
+        "></div>
+  <!-- Background image -->
+  <div class="container">
+  <div class="card mx-4 mx-md-5 bg-secondary opacity-0 shadow-lg p-2" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+    <div class="card-body py-5 px-md-5">
+      <div style="position:absolute; left: 35;"><img style="margin-left:{% if player.getLookType() in [75, 266, 302] %}-0px;margin-top:-0px;width:64px;height:64px;{% else %}-60px;margin-top:-60px;width:128px;height:128px;{% endif %}" src="{{ outfit }}" alt="player outfit"/></div>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-5">Zaloguj się</h2>
+          <form action="./registry" method="post" autocomplete="off">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+        
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" name="account" class="form-control"  id="login" required/>
+              <label class="form-label" for="form3Example3">Login</label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" class="form-control"  placeholder="" name="password" id="password" required/>
+              <label class="form-label" for="form3Example4">Hasło</label>
+            </div>
+
+            <!-- Submit button -->
+            <input  class="btn btn-primary btn-block mb-4" type="submit" value="Zaloguj się" name="submit" />
+            
+            
+
+          </form>
+          <p>Nie masz konta? Zarejestruj się!</p>
+        
+          <a href="{{register}}" class="btn btn-success btn-block mb-4 ">Zarejestruj się</a>
+        
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</div>
+    {% endblock %}

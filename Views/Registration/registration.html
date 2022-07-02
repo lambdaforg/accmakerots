@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{%block style%}
+{%endblock%}
+{% block title %}Zaloguj się{% endblock %}
+{% block otherPages %}
+<div class="bg-dark h-100">
+<section class="text-center">
+  <!-- Background image -->
+  <div class="p-5 bg-image" style="
+        background-image: url('Front/newImages/accountRegister.jpg');
+        height: 350px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: 80% 100%; 
+        "></div>
+  <!-- Background image -->
+  <div class="container">
+  <div class="card mx-4 mx-md-5 bg-secondary opacity-0 shadow-lg p-2" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+    <div class="card-body py-5 px-md-5">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-5">Zarejestruj się</h2>
+          <form action="./registry" method="post" autocomplete="off">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input type="text" class="form-control"  name="username2" placeholder="Username" id="username" required/>
+                  <label class="form-label" for="form3Example1">Nazwa gracza</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input type="text"class="form-control" name="username" placeholder="Username" id="username" required/>
+                  <label class="form-label" for="form3Example2">Login</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" name="email" class="form-control"  id="email" required/>
+              <label class="form-label" for="form3Example3">Adres Email</label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" class="form-control"  name="password" placeholder="Password" id="password" required/>
+              <label class="form-label" for="form3Example4">Hasło</label>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-center mb-4">
+              <div>
+              <input class="form-check-input me-2 " type="checkbox" value="" id="form2Example33" checked />
+              <label class="form-check-label" for="form2Example33">
+                Akceptuję regulamin serwera
+              </label>
+              </div>
+            </div>
+
+            <!-- Submit button -->
+            <input  class="btn btn-primary btn-block mb-4 "  type="submit" value="Sign up" name="submit" />
+        
+          </form>
+          <p>Masz konto? Zaloguj się!</p>
+          <a href="{{signin}}" class="btn btn-success btn-block mb-4 ">Zaloguj się</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</div>
+    {% endblock %}
